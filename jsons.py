@@ -12,3 +12,16 @@ json = people.json()
 print('people currently in space:')
 for item in json['people']:
     print(item['name'], '-', item['craft'])
+
+
+print()
+import json
+
+json_string = '{"name": "John", "age": 30, "city": "New York"}'
+python_dict = json.loads(json_string)
+print(python_dict)
+print(type(python_dict))
+
+json_string = json.dumps(python_dict)
+print(json_string)
+print(type(json_string))
