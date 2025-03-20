@@ -1,4 +1,4 @@
-import sys, random
+import sys
 
 x = """
 awesome
