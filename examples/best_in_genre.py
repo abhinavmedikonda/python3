@@ -3,9 +3,7 @@ import requests
 class best_in_genre:
     def get_best_from_api(self, genre):
         response = requests.get('https://jsonmock.hackerrank.com/api/tvseries')
-
         total_pages = response.json().get('total_pages')
-
         # print(total_pages)
 
         best = ''
