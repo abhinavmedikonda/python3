@@ -18,3 +18,10 @@ for i in range(months):
     loan -= instalment
     print(f'payment {i}, monthly interest: {interest}', end='')
     print(', pending amount:', loan)
+
+print()
+
+i = 0
+while i < 5:
+    print(i)
+    i += 1
