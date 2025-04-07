@@ -58,7 +58,7 @@ def print_document(data):
         next_x += item['x-coordinate'] - next_x + 1
     print(string)
 
-def print_public_google_doc_2d_data(document_url):
+def print_2d_map_google_doc(document_url):
     try:
         html_content = get_document_html(document_url)
         data = translate_to_python(html_content)
@@ -71,4 +71,4 @@ def print_public_google_doc_2d_data(document_url):
 if __name__ == "__main__":
     # document_url = "https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub"
     document_url = "https://docs.google.com/document/d/e/2PACX-1vQGUck9HIFCyezsrBSnmENk5ieJuYwpt7YHYEzeNJkIb9OSDdx-ov2nRNReKQyey-cwJOoEKUhLmN9z/pub"
-    print_public_google_doc_2d_data(document_url)
+    print_2d_map_google_doc(document_url)
