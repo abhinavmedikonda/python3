@@ -59,10 +59,14 @@ def print_document(data):
     print(string)
 
 def print_public_google_doc_2d_data(document_url):
-    html_content = get_document_html(document_url)
-    data = translate_to_python(html_content)
-    data = clean_data(data)
-    print_document(data)
+    try:
+        html_content = get_document_html(document_url)
+        data = translate_to_python(html_content)
+        data = clean_data(data)
+        print_document(data)
+    except Exception as e:
+        print("An error occurred while processing the document.")
+        print(e)
 
 if __name__ == "__main__":
     # document_url = "https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub"
