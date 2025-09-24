@@ -15,6 +15,7 @@ for item in people:
 print()
 
 json_string = '{"name": "John", "age": 30, "city": "New York"}'
+json_string = "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}"
 python_dict = json.loads(json_string)
 print(python_dict)
 print(type(python_dict))
@@ -22,3 +23,5 @@ print(type(python_dict))
 json_string = json.dumps(python_dict)
 print(json_string)
 print(type(json_string))
+
+print(bytearray(json_string, 'utf-8'))

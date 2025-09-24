@@ -25,3 +25,6 @@ i = 0
 while i < 5:
     print(i)
     i += 1
+
+for i, e in enumerate(['a', 'b', 'c']):
+    print(i, e)
