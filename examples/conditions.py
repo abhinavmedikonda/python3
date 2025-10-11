@@ -13,3 +13,7 @@ elif weather == 'cloudy' and temperature < 10:
     print('its cold outside, stay home')
 else:
     print('enjoy weather outside')
+
+
+
+print("good" if temperature > 0 else "cold")
