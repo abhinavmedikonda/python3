@@ -1,8 +1,6 @@
 import sys
 
-x = """
-awesome
-"""
+x = "awesome"
 print(sys.version)
 
 def funcA():

@@ -1,3 +1,13 @@
+for i, v in enumerate(['a', 'b', 'c']):
+    print(i, v)
+
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+
+print()
+
 loan = float(input("total loan: ")) # 1000
 apr = float(input("annual percentage rate: ")) # 10
 instalment = float(input("instalment amount: ")) # 50
@@ -18,13 +28,3 @@ for i in range(months):
     loan -= instalment
     print(f'payment {i}, monthly interest: {interest}', end='')
     print(', pending amount:', loan)
-
-print()
-
-i = 0
-while i < 5:
-    print(i)
-    i += 1
-
-for i, e in enumerate(['a', 'b', 'c']):
-    print(i, e)

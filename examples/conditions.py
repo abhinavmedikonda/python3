@@ -16,4 +16,4 @@ else:
 
 
 
-print("good" if temperature > 0 else "cold")
+print("good" if temperature > 0 else "cold") # inline

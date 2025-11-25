@@ -1,5 +1,10 @@
 
 def plusMinusZeros(arr):
+    n = len(arr)
+
+    all_positive = all(i > 0 for i in arr)
+    any_zero = any(i == 0 for i in arr)
+
     plus = [i for i in arr if i > 0]
     minus = [i for i in arr if i < 0]
     zero = [i for i in arr if i == 0]

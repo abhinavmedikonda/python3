@@ -12,6 +12,8 @@ def find_acronym():
     except:
         print('file error')
         return
+    finally:
+        pass
 
     if not found:
         print('acronym does not exist')
