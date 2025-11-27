@@ -1,9 +1,17 @@
+arr = [3, 5, 8, 2, 6]
+all_positive = all(i > 0 for i in arr)
+any_zero = any(i == 0 for i in arr)
+print(sum(arr))
+print(max(arr))
+print(min(arr))
+print(arr.count(3))
+arr.index(3, 1, 4) if 3 in arr[1:4] else -1
+arr.sort(key = lambda x: -x)
+arr = sorted(arr, reverse=True)
+arr.reverse()
 
 def plusMinusZeros(arr):
     n = len(arr)
-
-    all_positive = all(i > 0 for i in arr)
-    any_zero = any(i == 0 for i in arr)
 
     plus = [i for i in arr if i > 0]
     minus = [i for i in arr if i < 0]
@@ -14,12 +22,6 @@ def plusMinusZeros(arr):
     print(f"{len(zero)/n:08.4f}")
 
     print(f"{int(100/n):06d}")
-
-    print(sum(arr))
-    print(max(arr))
-    print(min(arr))
-    print(arr.count(3))
-    arr.index(3, 1, 4) if 3 in arr[1:4] else -1
 
 '''
 7

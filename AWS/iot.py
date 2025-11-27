@@ -1,9 +1,9 @@
 import json
 import time
 import os
-import psutil
 from awsiot import mqtt5_client_builder, mqtt5
 
+import psutil # 3rd party
 def get_cpu_percent():
     return psutil.cpu_percent(interval=1)
 

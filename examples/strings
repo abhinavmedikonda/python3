@@ -1,0 +1,22 @@
+s = "hello"
+print(s[1:4])   # ell
+print(s[:3])    # hel
+print(s[2:])    # llo
+print(s[::-1])  # reverse → olleh
+print("ha" * 3)     # "hahaha"
+"he" in "hello"      # True
+"zz" in "hello"     # False
+"abc".isalpha()       # True
+"123".isdigit()       # True
+"abc123".isalnum()    # True
+"hello".islower()     # True
+"HELLO".isupper()     # True
+
+x = '''
+multi-line
+'''
+
+arr = "hello  world".split([",", " "])
+print(arr)
+s = ", ".join(arr)
+print(s)

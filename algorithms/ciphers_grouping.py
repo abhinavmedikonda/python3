@@ -14,7 +14,6 @@ def group_ciphers(ss):
             ss.pop(0)
     return out
 
-
 def are_ciphers(s1, s2):
     if len(s1) != len(s2):
         return False
