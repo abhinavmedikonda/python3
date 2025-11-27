@@ -16,7 +16,10 @@ x = '''
 multi-line
 '''
 
-arr = "hello  world".split([",", " "])
-print(arr)
-s = ", ".join(arr)
+arr = "hello,world".split(",")
+s = " ".join(arr)
 print(s)
+
+i = 55
+f = 3.14
+print(f"{i:09.3f}, {int(f):03d}")

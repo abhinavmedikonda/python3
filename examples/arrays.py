@@ -9,6 +9,8 @@ arr.index(3, 1, 4) if 3 in arr[1:4] else -1
 arr.sort(key = lambda x: -x)
 arr = sorted(arr, reverse=True)
 arr.reverse()
+arr[::-1]   # reverse
+arr[::2]    # alternative items
 
 def plusMinusZeros(arr):
     n = len(arr)
