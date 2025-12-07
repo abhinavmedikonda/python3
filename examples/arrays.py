@@ -1,9 +1,11 @@
-arr = [3, 5, 8, 2, 6]
+arr = [3, 5, 8, 2, 6, 1, 4, 7, 3]
+arr.pop(0)
 all_positive = all(i > 0 for i in arr)
 any_zero = any(i == 0 for i in arr)
 print(sum(arr))
 print(max(arr))
 print(min(arr))
+print(reversed(arr))
 print(arr.count(3))
 arr.index(3, 1, 4) if 3 in arr[1:4] else -1
 arr.sort(key = lambda x: -x)

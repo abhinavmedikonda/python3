@@ -17,3 +17,10 @@ else:
 
 
 print("good" if temperature > 0 else "cold") # inline
+
+
+match input('Enter choice: '):
+    case '1':
+        print('option 1')
+    case '2':
+        print('option 2')
