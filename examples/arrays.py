@@ -1,5 +1,8 @@
 arr = [3, 5, 8, 2, 6, 1, 4, 7, 3]
 arr.pop(0)
+arr.insert(0, 9)
+arr.pop()
+arr.append(10)
 all_positive = all(i > 0 for i in arr)
 any_zero = any(i == 0 for i in arr)
 print(sum(arr))
