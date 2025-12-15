@@ -1,59 +1,60 @@
 from linkedlist import dll
 
-def get_cache(key):
-    if key not in hsh:
+def get(_key):
+    if _key not in hsh:
         return -1
-    nod = hsh[key]
+    nod = hsh[_key]
     evict(nod)
     queue(nod)
-    hsh[key] = nod
+    hsh[_key] = nod
     return nod.data[1]
 
-def add_cache(key, value):
-    nod = hsh.get(key)
-    if len(hsh) >= lnt or key in hsh:
+def put(_key, _value):
+    nod = hsh.get(_key)
+    if len(hsh) >= lnt or _key in hsh:
         evict(nod)
-    nod = dll((key, value))
+    nod = dll((_key, _value))
     queue(nod)
-    hsh[key] = nod
+    hsh[_key] = nod
 
-def evict(nod):
+def evict(_nod):
     global hed, tai
     if not hed:
         return -1
     if hed is tai:
-        hsh.pop(nod.data[0], None)
+        hsh.pop(_nod.data[0], None)
         hed = None
         tai = None
-    elif not nod or nod is hed:
+    elif not _nod or _nod is hed:
         return evict_head()
-    elif nod is tai:
-        nod.previous.next = None
-        hsh.pop(nod.data[0])
-        tai = nod.previous
+    elif _nod is tai:
+        _nod.prev.next = None
+        hsh.pop(_nod.data[0])
+        tai = _nod.prev
     else:
-        nod.previous.next = nod.next
-        hsh.pop(nod.data[0])
-        nod.next.previous = nod.previous
+        _nod.prev.next = _nod.next
+        hsh.pop(_nod.data[0])
+        _nod.next.prev = _nod.prev
 
 def evict_head():
     global hed
     if not hed:
         return -1
-    hed.next.previous = None
+    hed.next.prev = None
     hsh.pop(hed.data[0])
     hed = hed.next
+    return "done"
 
-def queue(nod):
+def queue(_nod):
     global hed, tai
     if not tai:
-        hed = nod
-        tai = nod
+        hed = _nod
+        tai = _nod
     else:
-        tai.next = nod
-        nod.previous = tai
-        nod.next = None
-        tai = nod
+        tai.next = _nod
+        _nod.prev = tai
+        _nod.next = None
+        tai = _nod
 
 def list_cache():
     nod = hed
@@ -70,9 +71,9 @@ if __name__ == '__main__':
         print(f'''\n1. add cache\n2. get cache\n3. delete cache\n4. lru\n5. mru\n6. list cache''')
         match input("Enter: ").strip():
             case '1':
-                add_cache(*input("key value: ").strip().split())
+                put(*input("key value: ").strip().split())
             case '2':
-                print(get_cache(input("key: ").strip()))
+                print(get(input("key: ").strip()))
             case '3':
                 print(evict(hsh.get(input("key: ").strip())))
             case '4':
