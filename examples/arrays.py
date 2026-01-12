@@ -18,6 +18,10 @@ arr.reverse()
 arr[::-1]   # reverse
 arr[::2]    # alternative items
 
+from collections import Counter
+arr = [2, 6, 5, 3, 7, 6, 2, 8, 5, 6, 2, 9, 2]
+freq = Counter(arr)
+print(f'count of 2: {freq[2]}')
 def plusMinusZeros(arr):
     n = len(arr)
 

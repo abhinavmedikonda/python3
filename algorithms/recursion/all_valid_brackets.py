@@ -1,10 +1,5 @@
-#!/bin/python3
-#
-# Complete the 'generateAngleBracketSequences' function below.
-#
-# The function is expected to return a STRING_ARRAY.
-# The function accepts INTEGER n as parameter.
-#
+import sys
+sys.setrecursionlimit(10**4)
 
 def generateAngleBracketSequences(n):
     return recur(list(), str(), n, 0)
