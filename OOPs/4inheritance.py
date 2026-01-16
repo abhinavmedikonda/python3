@@ -1,4 +1,4 @@
-class employee:
+class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
@@ -8,14 +8,14 @@ class employee:
     def fullname(self):
         return f"{self.first} {self.last}"
 
-class developer(employee):
+class developer(Employee):
     compensation_rate = 1.1
 
     def __init__(self, first, last, pay, programming_language='Python'):
         super().__init__(first, last, pay)
         self.programming_language = programming_language
 
-class manager(employee):
+class manager(Employee):
     def __init__(self, first, last, pay, employees=None):
         super().__init__(first, last, pay)
         if employees is None:
@@ -39,17 +39,17 @@ class manager(employee):
 # print(help(developer))
 
 a = developer('abhi', 'nav', 150000)
-b = employee('test', 'user', 99999)
+b = Employee('test', 'user', 99999)
 c = manager('the', 'boss', 90000, [a])
 c.add_employee(b)
 c.print_employees()
 print(a.email)
 print(b.email)
 print()
-print(isinstance(a, employee))
+print(isinstance(a, Employee))
 print(isinstance(a, manager))
 print(isinstance(a, developer))
 print()
-print(issubclass(employee, manager))
-print(issubclass(manager, employee))
+print(issubclass(Employee, manager))
+print(issubclass(manager, Employee))
 print(issubclass(developer, manager))

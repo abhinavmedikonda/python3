@@ -1,4 +1,4 @@
-class employee:
+class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
@@ -15,15 +15,15 @@ class employee:
         return f"{self.fullname()} - {self.email}"
 
     def __add__(self, other):
-        if isinstance(other, employee):
+        if isinstance(other, Employee):
             return self.pay + other.pay
         return NotImplemented # to avoid throwing error, it can be checked in other class for implementation
 
     def __len__(self):
         return len(self.fullname())
 
-a = employee('abhi', 'nav', 150000)
-b = employee('test', 'user', 99999)
+a = Employee('abhi', 'nav', 150000)
+b = Employee('test', 'user', 99999)
 
 print(a)
 print(a.__repr__())

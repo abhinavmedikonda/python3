@@ -1,4 +1,5 @@
-s = "hello"
+s = 'hello'
+print(s+' world')  # hello world
 print(s[1:4])   # ell
 print(s[:3])    # hel
 print(s[2:])    # llo

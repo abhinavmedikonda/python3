@@ -1,4 +1,4 @@
-class employee:
+class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
@@ -23,7 +23,7 @@ class employee:
         self.first = None
         self.last = None
 
-a = employee('abhi', 'nav', 150000)
+a = Employee('abhi', 'nav', 150000)
 print(a.fullname)
 print(a.email)
 

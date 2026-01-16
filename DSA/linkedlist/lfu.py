@@ -1,8 +1,8 @@
-from linkedlist import dll
+from linkedlist import Dll
 
 def new_meta():
-    head = dll()
-    tail = dll()
+    head = Dll()
+    tail = Dll()
     head.next = tail
     tail.prev = head
     return {
@@ -12,7 +12,7 @@ def new_meta():
     }
 
 def new_node(_key, _val):
-    return dll({
+    return Dll({
         'key': _key,
         'val': _val,
         'freq': 1

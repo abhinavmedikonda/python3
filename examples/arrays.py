@@ -1,3 +1,5 @@
+arr = [-1] * 10
+print(arr)
 arr = [3, 5, 8, 2, 6, 1, 4, 7, 3]
 arr.pop(0)
 arr.insert(0, 9)

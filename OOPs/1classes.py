@@ -1,4 +1,4 @@
-class employee:
+class Employee:
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
@@ -7,11 +7,11 @@ class employee:
     def fullname(self):
         return f"{self.first} {self.last}"
 
-a = employee('abhi', 'nav', 150000)
-b = employee('test', 'user', 99999)
+a = Employee('abhi', 'nav', 150000)
+b = Employee('test', 'user', 99999)
 
 print(a)
 print(a.email)
-print(employee.fullname(a))
+print(Employee.fullname(a))
 print(b.email)
 print(b.fullname())

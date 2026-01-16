@@ -1,11 +1,11 @@
-class sll:
+class Sll:
     def __init__(self, data=None):
         self.data = data
-        self.next: "sll" = None
+        self.next: "Sll" = None
 
-class dll:
+class Dll:
     def __init__(self, data=None):
         self.data = data
-        self.prev: "dll" = None
-        self.next: "dll" = None
+        self.prev: "Dll" = None
+        self.next: "Dll" = None
     

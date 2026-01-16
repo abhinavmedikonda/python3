@@ -1,4 +1,4 @@
-from linkedlist import dll
+from linkedlist import Dll
 
 def get(_key):
     if _key not in hsh:
@@ -13,7 +13,7 @@ def put(_key, _value):
     nod = hsh.get(_key)
     if len(hsh) >= lnt or _key in hsh:
         evict(nod)
-    nod = dll((_key, _value))
+    nod = Dll((_key, _value))
     queue(nod)
     hsh[_key] = nod
 

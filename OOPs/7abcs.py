@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 # ABC must be inherited to create interface
-class iemployee(ABC): # interface
+class IEmployee(ABC): # interface
     @abstractmethod
     def email(self):
         pass
@@ -11,7 +11,7 @@ class iemployee(ABC): # interface
         pass
 
 # ABC must be inherited to create abstract class, thats done in iemployee
-class employee(iemployee): # abstract class
+class Employee(IEmployee): # abstract class
     def __init__(self, first, last):
         self.first = first
         self.last = last
@@ -23,7 +23,7 @@ class employee(iemployee): # abstract class
     def fullname(self):
         pass
 
-class developer(employee):
+class developer(Employee):
     def __init__(self, first, last, prog_lang='python'):
         super().__init__(first, last)
         self.prog_lang = prog_lang

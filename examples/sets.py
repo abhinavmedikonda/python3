@@ -1,10 +1,15 @@
-tot = {1, 2, 3, 'a', 'b', 'c'}
-tot.add(4)
-tot.update([4, 5])
-tot.remove(4)
+bkt = {1, 2, 3, 'a', 'b', 'c'}
+bkt.add(4)
+bkt.update([4, 5])
+bkt.remove(4)
 # tot.remove(4) # error on no match
-tot.discard(4)
-[tot.discard(it) for it in ['a', 'b', 'c']]
-lst = sorted(tot, key = lambda x: x)
-
+bkt.discard(4)
+[bkt.discard(it) for it in ['a', 'b', 'c']]
+lst = sorted(bkt, key = lambda x: x)
 print(type(lst), lst)
+
+bkt2 = {3, 4, 5, 6}
+print(bkt.isdisjoint(bkt2))
+unin = bkt.union(bkt2)
+intr = bkt.intersection(bkt2)
+

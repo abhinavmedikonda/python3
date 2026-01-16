@@ -1,4 +1,4 @@
-class employee:
+class Employee:
     compensation_rate = 1.04
 
     def __init__(self, first, last, pay):
@@ -25,15 +25,15 @@ class employee:
             return False
         return True
 
-a = employee.from_string('abhi-nav-150000')
-b = employee.from_string('test-user-99999')
+a = Employee.from_string('abhi-nav-150000')
+b = Employee.from_string('test-user-99999')
 print(a.email)
 print(b.email)
 
-employee.set_compensation_rate(1.05)
+Employee.set_compensation_rate(1.05)
 print(a.compensation_rate)
-print(employee.compensation_rate)
+print(Employee.compensation_rate)
 
 import datetime
 date = datetime.date(2023, 10, 8)
-print(employee.is_workday(date))
+print(Employee.is_workday(date))
