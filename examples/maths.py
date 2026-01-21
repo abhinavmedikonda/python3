@@ -1,5 +1,12 @@
 
-import math
+import sys, math
+
+maxi = sys.maxsize
+mini = -sys.maxsize
+maxf = float('inf')
+minf = -float('inf')
+print(maxi, mini, maxf, minf)
+print(2**63)
 
 print(5+3)
 print(5-3)

@@ -1,14 +1,4 @@
-#
-# Complete the 'getBinarySearchTreeHeight' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER_ARRAY values
-#  2. INTEGER_ARRAY leftChild
-#  3. INTEGER_ARRAY rightChild
-#
-
-def getBinarySearchTreeHeight(values, leftChild, rightChild):
+def get_bst_height(values, leftChild, rightChild):
     return get_height(0, values, leftChild, rightChild)
 
 def get_height(i, values, leftChild, rightChild):
@@ -40,6 +30,6 @@ if __name__ == '__main__':
     rightChild_count = int(input().strip())
     rightChild = [int(i) for i in input().strip().split()]
 
-    result = getBinarySearchTreeHeight(values, leftChild, rightChild)
+    result = get_bst_height(values, leftChild, rightChild)
 
     print(result)
