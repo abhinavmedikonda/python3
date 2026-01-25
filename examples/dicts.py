@@ -1,5 +1,6 @@
 hsh = {2: 'a', 'b': 5, 4: 3, 'c': 8, 7: 'b'}
-hsh.setdefault(9, 'z')
+hsh.setdefault(9, []).append(10)
+hsh.setdefault(9, []).append(11)
 hsh[4] = 3
 hsh.pop(4)
 hsh.pop(4, -1)

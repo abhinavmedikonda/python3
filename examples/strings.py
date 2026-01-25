@@ -12,6 +12,7 @@ print("ha" * 3)     # "hahaha"
 "abc123".isalnum()    # True
 "hello".islower()     # True
 "HELLO".isupper()     # True
+s = s[:2] + s[3:]
 
 x = '''
 multi-line
@@ -24,3 +25,4 @@ print(s)
 i = 55
 f = 3.14
 print(f"{i:09.3f}, {int(f):03d}")
+t = f'{i:f}'

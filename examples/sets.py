@@ -12,4 +12,4 @@ bkt2 = {3, 4, 5, 6}
 print(bkt.isdisjoint(bkt2))
 unin = bkt.union(bkt2)
 intr = bkt.intersection(bkt2)
-
+bkt.intersection_update(bkt2)

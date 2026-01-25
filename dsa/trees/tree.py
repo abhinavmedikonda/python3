@@ -50,7 +50,7 @@ class Btree:
         return 1 + max(Btree.height(btree.left), Btree.height(btree.right))
     def level(index):
         return int(math.log(index+1, 2))
-    def print(btree):
+    def print(btree): # dfs
         outp = [str() for i in range(Btree.height(btree))]
         stack = []
         disp = 0
