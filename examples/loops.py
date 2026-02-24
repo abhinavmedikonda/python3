@@ -1,3 +1,4 @@
+[print(i, v) for i, v in enumerate(['a', 'b', 'c']) if i>1]
 for i, v in enumerate(['a', 'b', 'c']):
     print(i, v)
 
