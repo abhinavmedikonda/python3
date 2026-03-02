@@ -1,24 +1,15 @@
-#!/bin/python3
-#
-# Complete the 'areBracketsProperlyMatched' function below.
-#
-# The function is expected to return a BOOLEAN.
-# The function accepts STRING code_snippet as parameter.
-#
-
 def areBracketsProperlyMatched(code_snippet):
-    ht = {'{': '}', '[': ']', '(': ')'}
-    stack = []
+    mapr = {'}': '{', ']': '[', ')': '('}
+    stk = []
     for c in code_snippet:
-        if c not in ['(', '[', '{', ')', ']', '}']:
-            continue
         if c in ['(', '[', '{']:
-            stack.append(c)
-        elif len(stack) == 0 or c != ht[stack.pop()]:
-            return 0
-    return 1
+            stk.append(c)
+        elif c in mapr:
+            if not stk or mapr[c] != stk.pop():
+                return False
+    return not stk
 
 if __name__ == '__main__':
-    code_snippet = input()
-    result = areBracketsProperlyMatched(code_snippet)
-    print(int(result))
+    print(areBracketsProperlyMatched('(da)()))s(){[df]}'))
+    print(areBracketsProperlyMatched('(da)()s(){[df]}'))
+    print(areBracketsProperlyMatched('{{(()'))

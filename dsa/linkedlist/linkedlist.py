@@ -8,4 +8,3 @@ class Dll:
         self.data = data
         self.prev: "Dll" = None
         self.next: "Dll" = None
-    
