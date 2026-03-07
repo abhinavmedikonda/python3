@@ -1,18 +1,17 @@
-arr = [-1] * 10
+arr = [-1] * 5
 print(arr)
-arr = [3, 5, 8, 2, 6, 1, 4, 7, 3]
-arr.pop(0)
+arr += [[1, 2], 3, 4]
+print(arr)
+arr = [3, 5, 8, 2, 6, 1, 4, 3, 7]
 arr.insert(0, 9)
+arr.pop(0)
 arr.pop()
 arr.append(10)
 arr.extend([11, 12, 13])
 arr.remove(10)
 all_positive = all(i > 0 for i in arr)
 any_zero = any(i == 0 for i in arr)
-print(sum(arr))
-print(max(arr))
-print(min(arr))
-print(reversed(arr))
+print(list(reversed(arr)))
 print(arr.count(3))
 arr.index(3, 1, 4) if 3 in arr[1:4] else -1
 arr.sort(key = lambda x: -x)
