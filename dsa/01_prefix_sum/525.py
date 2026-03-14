@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution:
-    def findMaxLength(self, nums: List[int]) -> int:
+    def findMaxLength(self, nums: list[int]) -> int:
         max_ = 0
         score = 0
         hsh = {0: -1}
@@ -15,5 +13,6 @@ class Solution:
                 
 if __name__ == '__main__':
     o = Solution()
-    out = o.findMaxLength([0,1,0,0,0,0,1,1,0,1,1,0,0,0,1])
-    print(out)
+    print(o.findMaxLength([0,1]))
+    print(o.findMaxLength([0,1,0]))
+    print(o.findMaxLength([0,1,1,1,1,1,0,0,0]))

@@ -1,21 +1,21 @@
-stack = []
-stack.append(1)
-stack.append(2)
-stack.append(3)
-print(stack.pop())
+stk = []
+stk.append(1)
+stk.append(2)
+stk.append(3)
+print(stk.pop())
 
-queue = []
-queue.append(1)
-queue.append(2)
-queue.append(3)
-print(queue.pop(0))
+que = []
+que.append(1)
+que.append(2)
+que.append(3)
+print(que.pop(0))
 
 # list performs well for stack, deque performs well for queue
 from collections import deque
-my_queue = deque()
-my_queue.append('A')
-my_queue.append('B')
-my_queue.append('C')
-first_item = my_queue.popleft()
-my_queue.appendleft('A')
-last_item = my_queue.pop()
+deq = deque()
+deq.append('A')
+deq.append('B')
+deq.append('C')
+first_item = deq.popleft()
+deq.appendleft('A')
+last_item = deq.pop()
