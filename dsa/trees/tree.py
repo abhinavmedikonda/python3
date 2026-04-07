@@ -1,6 +1,5 @@
 import math
 
-
 class Tree:
     def __init__(self, data):
         self.data = data
@@ -12,18 +11,20 @@ class Btree:
         self.left: "Btree" = None
         self.right: "Btree" = None
     def build(arr):
+        def recur(arr, node, ind):
+            lc = (ind*2)+1
+            rc = lc+1
+            if lc < len(arr) and arr[lc]:
+                node.left = Btree(arr[lc])
+                recur(arr, node.left, lc)
+            if rc < len(arr) and arr[rc]:
+                node.right = Btree(arr[rc])
+                recur(arr, node.right, rc)
+        if not arr:
+            return None
         btree = Btree(arr[0])
-        Btree.recur_build(arr, btree, 0)
-        return btree
-    def recur_build(arr, node, ind):
-        lc = (ind*2)+1
-        rc = lc+1
-        if lc < len(arr) and arr[lc]:
-            node.left = Btree(arr[lc])
-            Btree.recur_build(arr, node.left, lc)
-        if rc < len(arr) and arr[rc]:
-            node.right = Btree(arr[rc])
-            Btree.recur_build(arr, node.right, rc)
+        recur(arr, btree, 0)
+        return btree    
     # bst sequence
     def in_order(btree):
         if not btree:

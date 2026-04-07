@@ -1,23 +1,20 @@
-from typing import List
+import sys
+
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
-            return 0
-        bkt = {s[0]}
-        l, r = 0, 1
-        mx = 1
-        while l < r and r < len(s):
-            if s[r] in bkt:
-                while s[l] != s[r]:
-                    bkt.remove(s[l])
-                    l += 1
-                l += 1
-            else:
-                bkt.add(s[r])
-            mx = max(mx, r-l+1)
+        hmap = {}
+        outp = -sys.maxsize
+        l, r = 0, 0
+        while r < len(s):
+            if s[r] in hmap:
+                for v in s[l:hmap[s[r]]]:
+                    hmap.pop(v)
+                l = 1+hmap[s[r]]
+            outp = max(outp, r-l+1)
+            hmap[s[r]] = r
             r += 1
-        return mx
+        return outp if s else 0
 
 if __name__ == '__main__':
     o = Solution()

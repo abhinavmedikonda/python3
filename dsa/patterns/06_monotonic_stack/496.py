@@ -1,14 +1,16 @@
 from collections import defaultdict
+import sys
+
 
 class Solution:
     def nextGreaterElement(self, nums1: list[int], nums2: list[int]) -> list[int]:
-        hsh = defaultdict(lambda: -1)
-        stk = []
-        for n in nums2:
-            while stk and stk[-1]<n:
-                hsh[stk.pop()] = n
-            stk.append(n)
-        return [hsh[n] for n in nums1]
+        stck = [sys.maxsize]
+        hmap = defaultdict(lambda: -1)
+        for v in nums2:
+            while v > stck[-1]:
+                hmap[stck.pop()] = v
+            stck.append(v)
+        return [hmap[v] for v in nums1]
 
 if __name__ == '__main__':
     o = Solution()
