@@ -20,6 +20,4 @@ def bfs(btree):
 if __name__ == '__main__':
     btree = Btree.build([0, 1, 2, None, 4, 5, None, 7, None, 9])
     bfs(btree)
-
-    btree = Btree.build(range(50))
     Btree.print(btree)

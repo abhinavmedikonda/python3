@@ -1,7 +1,8 @@
 class Solution:
     def __init__(self, nums: list[int]):
         self.dp = [0]
-        [self.dp.append(self.dp[-1]+v) for v in nums]
+        for v in nums:
+            self.dp.append(self.dp[-1]+v)
 
     def sumRange(self, left: int, right: int) -> int:
         return self.dp[right+1]-self.dp[left]

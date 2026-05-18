@@ -14,10 +14,10 @@ class Btree:
         def recur(arr, node, ind):
             lc = (ind*2)+1
             rc = lc+1
-            if lc < len(arr) and arr[lc]:
+            if lc < len(arr) and arr[lc] != None:
                 node.left = Btree(arr[lc])
                 recur(arr, node.left, lc)
-            if rc < len(arr) and arr[rc]:
+            if rc < len(arr) and arr[rc] != None:
                 node.right = Btree(arr[rc])
                 recur(arr, node.right, rc)
         if not arr:
