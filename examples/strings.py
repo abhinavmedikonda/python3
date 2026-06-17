@@ -18,7 +18,8 @@ x = '''
 multi-line
 '''
 
-arr = "hello,world".split(",")
+arr = "hello, world".split(",")
+arr = [v.strip() for v in arr]
 s = " ".join(arr)
 print(s)
 

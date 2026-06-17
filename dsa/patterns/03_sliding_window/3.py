@@ -1,20 +1,18 @@
-import sys
+from collections import defaultdict
 
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        hmap = {}
-        outp = -sys.maxsize
-        l, r = 0, 0
-        while r < len(s):
-            if s[r] in hmap:
-                for v in s[l:hmap[s[r]]]:
-                    hmap.pop(v)
+        hmap = defaultdict(lambda: -1)
+        l = 0
+        maxi = 0
+        for r in range(len(s)):
+            if hmap[s[r]] >= l:
                 l = 1+hmap[s[r]]
-            outp = max(outp, r-l+1)
+            else:
+                maxi = max(maxi, r-l+1)
             hmap[s[r]] = r
-            r += 1
-        return outp if s else 0
+        return maxi
 
 if __name__ == '__main__':
     o = Solution()
