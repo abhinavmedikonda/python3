@@ -1,21 +1,21 @@
-import sys
-
-# kadane's algorithm
-def mss(_arr):
-    ms_ = 0
-    low = sys.maxsize
-    low_i = 0
-    bgn = end = -1
-    for i, it in enumerate(_arr):
-        if it < low:
-            low = it
-            low_i = i
-        if it-low > ms_:
-            ms_ = it-low
-            bgn = low_i
-            end = i
-    
-    print(ms_, f'({bgn}, {end})')
+'''
+53. Maximum Subarray
+kadane's algorithm
+'''
+class Solution:
+    def maxSubArray(self, nums: list[int]) -> int:
+        maxx = float('-inf')
+        summ = 0
+        for v in nums:
+            summ += v
+            if summ > maxx:
+                maxx = summ
+            if summ < 0:
+                summ = 0
+        return maxx
 
 if __name__ == '__main__':
-    mss([1, 4, 8, 3, 2, -2, 6, -3, 7])
+    o = Solution()
+    print(o.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    print(o.maxSubArray([1]))
+    print(o.maxSubArray([5,4,-1,7,8]))
